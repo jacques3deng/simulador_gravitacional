@@ -1,15 +1,15 @@
 ﻿// See https://aka.ms/new-console-template for more information
 
-Corpo c1 = new Corpo("c1",5.0f,2.0f,6.0f,5.0f,4.0f);
-Corpo c2 = new Corpo("c2",10.0f,4.0f,12.0f,10.0f,8.0f);
+Corpo c1 = new Corpo("c1",25.0f,2.0f,6.0f,5.0f);
+Corpo c2 = new Corpo("c2",500.0f,4.0f,12.0f,10.0f);
 
-float c1fg = c1.forcaGravitacional( c1.Massa,c2.Massa,c1.r(c1.pos,c2.pos));
-float c1r =  c1.r(c1.pos,c2.pos);
-float[] ac = c1.aceleracao(c1fg,c1.Massa,c1.pos,c2.pos);
-/*
-Console.Write(c1r);
-Console.Write(c1fg);*/
-Console.Write("ax: {0} ay:{1}",ac[0],ac[1]);
+float fgc1c2 = c1.forcaGravitacional( c1.Massa,c2.Massa,c1.r(c1.ponto,c2.ponto));
+float c1r =  c1.r(c1.ponto,c2.ponto);
+c1.setAceleracao(fgc1c2,c1.Massa, c1.ponto,c2.ponto,c1r);
 
+Console.WriteLine("Força {0}",fgc1c2);
+Console.WriteLine("Massa de c1 {0}",c1.Massa);
+Console.WriteLine("distania r: {0}",c1r);
+Console.WriteLine("aceleraçao ax: {0} ay: {1}",c1.aceleracao.ax,c1.aceleracao.ay);
 
 

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/media/jacques/Arquivos/Jacques/Engenharia da Computação/AED2/simulador_gravitacional-main/simulador_gravitacional.csproj",
+      "projectUniqueName": "/home/jacques/simulador_gravitacional/simulador_gravitacional.csproj",
       "projectName": "simulador_gravitacional",
-      "projectPath": "/media/jacques/Arquivos/Jacques/Engenharia da Computação/AED2/simulador_gravitacional-main/simulador_gravitacional.csproj",
+      "projectPath": "/home/jacques/simulador_gravitacional/simulador_gravitacional.csproj",
       "packagesPath": "/home/jacques/.nuget/packages/",
-      "outputPath": "/media/jacques/Arquivos/Jacques/Engenharia da Computação/AED2/simulador_gravitacional-main/obj/",
+      "outputPath": "/home/jacques/simulador_gravitacional/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/home/jacques/.nuget/NuGet/NuGet.Config"
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/snap/dotnet-sdk/162/sdk/6.0.202/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.202/RuntimeIdentifierGraph.json"
       }
     }
   }

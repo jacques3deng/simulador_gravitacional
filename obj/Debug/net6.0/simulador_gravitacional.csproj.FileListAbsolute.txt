@@ -28,3 +28,18 @@ C:/Users/Jacques/Documents/simulador_gravitacional/obj/Debug/net6.0/simulador_gr
 /media/jacques/Arquivos/Jacques/Engenharia da Computação/AED2/simulador_gravitacional-main/obj/Debug/net6.0/simulador_gravitacional.pdb
 /media/jacques/Arquivos/Jacques/Engenharia da Computação/AED2/simulador_gravitacional-main/obj/Debug/net6.0/simulador_gravitacional.genruntimeconfig.cache
 /media/jacques/Arquivos/Jacques/Engenharia da Computação/AED2/simulador_gravitacional-main/obj/Debug/net6.0/ref/simulador_gravitacional.dll
+/home/jacques/simulador_gravitacional/bin/Debug/net6.0/simulador_gravitacional
+/home/jacques/simulador_gravitacional/bin/Debug/net6.0/simulador_gravitacional.deps.json
+/home/jacques/simulador_gravitacional/bin/Debug/net6.0/simulador_gravitacional.runtimeconfig.json
+/home/jacques/simulador_gravitacional/bin/Debug/net6.0/simulador_gravitacional.dll
+/home/jacques/simulador_gravitacional/bin/Debug/net6.0/simulador_gravitacional.pdb
+/home/jacques/simulador_gravitacional/obj/Debug/net6.0/simulador_gravitacional.csproj.AssemblyReference.cache
+/home/jacques/simulador_gravitacional/obj/Debug/net6.0/simulador_gravitacional.GeneratedMSBuildEditorConfig.editorconfig
+/home/jacques/simulador_gravitacional/obj/Debug/net6.0/simulador_gravitacional.AssemblyInfoInputs.cache
+/home/jacques/simulador_gravitacional/obj/Debug/net6.0/simulador_gravitacional.AssemblyInfo.cs
+/home/jacques/simulador_gravitacional/obj/Debug/net6.0/simulador_gravitacional.csproj.CoreCompileInputs.cache
+/home/jacques/simulador_gravitacional/obj/Debug/net6.0/simulador_gravitacional.dll
+/home/jacques/simulador_gravitacional/obj/Debug/net6.0/refint/simulador_gravitacional.dll
+/home/jacques/simulador_gravitacional/obj/Debug/net6.0/simulador_gravitacional.pdb
+/home/jacques/simulador_gravitacional/obj/Debug/net6.0/simulador_gravitacional.genruntimeconfig.cache
+/home/jacques/simulador_gravitacional/obj/Debug/net6.0/ref/simulador_gravitacional.dll
