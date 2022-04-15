@@ -8,10 +8,4 @@ public struct Aceleracao{
         ay = a*( (p2.posy - p1.posy)/r );
     }
 
-    public Aceleracao(){
-        a = 0;
-        ax = 0;
-        ay = 0;
-    }
-
 }
