@@ -7,12 +7,14 @@ public class Corpo{
     public float v0{get;set;}
     public Ponto ponto;
     public Aceleracao aceleracao;
+    public Velocidade velocidade;
     public Corpo(string nome,float massa,float posx, float posy,float vel){
         Nome = nome;
         Massa = massa*1000;
         v0 = vel;
         ponto = new Ponto(posx, posy);
         aceleracao = new Aceleracao();
+        velocidade = new Velocidade();
     }
     
     public float r(Ponto p1, Ponto p2) {
@@ -26,11 +28,12 @@ public class Corpo{
         aceleracao = new Aceleracao(f,massa,p1,p2,r);
         return aceleracao;
     }
-    /*
-    public Velocidade(){
-        v = v0 + a*t;
-    }
     
+    public Velocidade setVelocidade(float f,float v0, Aceleracao a, float t){
+        velocidade = new Velocidade(f,v0,a,t);
+        return velocidade;
+    }
+    /*    
     public Deslocamento(float s0, float v0, float t, float a){
         return s0 + v0*t + (0.5f)*a*(t*t);
     }*/
