@@ -8,6 +8,7 @@ public class Corpo{
     public Ponto ponto;
     public Aceleracao aceleracao;
     public Velocidade velocidade;
+    public Deslocamento deslocamento;
     public Corpo(string nome,float massa,float posx, float posy,float vel){
         Nome = nome;
         Massa = massa*1000;
@@ -33,9 +34,10 @@ public class Corpo{
         velocidade = new Velocidade(f,v0,a,t);
         return velocidade;
     }
-    /*    
-    public Deslocamento(float s0, float v0, float t, float a){
-        return s0 + v0*t + (0.5f)*a*(t*t);
-    }*/
+     
+    public Deslocamento setDeslocamento(float s0, Velocidade v, Aceleracao a, float t){
+        deslocamento = new Deslocamento(s0,v,a,t);
+        return deslocamento;
+    }
    
 }
