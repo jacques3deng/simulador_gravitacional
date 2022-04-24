@@ -14,8 +14,6 @@ public class Corpo{
         Massa = massa*1000;
         v0 = vel;
         ponto = new Ponto(posx, posy);
-        aceleracao = new Aceleracao();
-        velocidade = new Velocidade();
     }
     
     public float r(Ponto p1, Ponto p2) {

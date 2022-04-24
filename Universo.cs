@@ -15,7 +15,9 @@ public class Universo{
     public void gravarDados(){
         //TODO: gravar saidas no arquivo
     }
-
+    public void atualizarValores(){
+        //TODO: atualizar valores de cada corpo após as transformações
+    }
     public Universo(){
         instrucoes();
         corpos = new List<Corpo>();
@@ -25,7 +27,8 @@ public class Universo{
         Console.WriteLine("1-Ler Arquivo e Setar Variaveis\n" + 
                             "2-Calcular força gravitacional total\n"+
                             "3-Calcular e aplicar transformações nos corpos\n"+
-                            "4-Gravar dados em arquivo\n");
+                            "4-Gravar dados em arquivo\n"+
+                            "5-Atualizar valores transformados\n");
     }
     
 }

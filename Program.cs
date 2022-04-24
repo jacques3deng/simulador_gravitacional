@@ -1,17 +1,24 @@
-﻿// See https://aka.ms/new-console-template for more information
-Universo universo = new Universo();
+﻿Universo universo = new Universo(); 
 
-//exemplo entre 2 corpos fora da classe universo
+// exemplo entre 2 corpos fora da classe universo,
+// implementaçao deve ser feita usando a classe universo
 
 Corpo c1 = new Corpo("c1",50,2,7,50);
-Corpo c2 = new Corpo("c2",500,10,8,5);
-float rc1c2 = c1.r(c1.ponto,c2.ponto);
-float fgTotal = c1.forcaGravitacional(c1.Massa,c2.Massa,rc1c2);
-Console.WriteLine("força gravitacional total c1 e c2 fgTotal: {0}",fgTotal);
-c1.setAceleracao(fgTotal,c1.Massa,c1.ponto,c2.ponto,rc1c2);
-Console.WriteLine("aceleração ax: {0} ay: {1}",c1.aceleracao.ax,c1.aceleracao.ay);
-c1.setVelocidade(fgTotal,50,c1.aceleracao,2);
-Console.WriteLine("velocidade vx: {0} vy: {1}",c1.velocidade.vx,c1.velocidade.vy);
-c1.setDeslocamento(4,c1.velocidade,c1.aceleracao,2);
-Console.WriteLine("deslocamento sx: {0} sy: {1}",c1.deslocamento.sx,c1.deslocamento.sy);
+Corpo c2 = new Corpo("c2",500,20,45,5);
 
+Corpo[] corpo = new Corpo[2]{c1,c2};
+
+for(int k =0; k < 4; k++){
+    float rc0c1 = corpo[0].r(corpo[0].ponto,corpo[1].ponto);
+    float fgTotal = corpo[0].forcaGravitacional(corpo[0].Massa,corpo[1].Massa,rc0c1);
+    for(int i = 0; i < corpo.Length; i++){
+        corpo[i].setAceleracao(fgTotal, corpo[i].Massa, corpo[0].ponto, corpo[1].ponto, rc0c1);
+        corpo[i].setVelocidade(fgTotal, 50, corpo[i].aceleracao, k);
+        corpo[i].setDeslocamento(10, corpo[i].velocidade, corpo[i].aceleracao, k);
+        corpo[i].ponto.posx += corpo[i].deslocamento.sx;
+        corpo[i].ponto.posy+= corpo[i].deslocamento.sy; 
+        Console.WriteLine("deslocamento sx: {0} sy: {1}",corpo[i].deslocamento.sx,corpo[i].deslocamento.sy);
+        Console.WriteLine("r: {2}\n x: {0} y: {1}",corpo[i].ponto.posx,corpo[i].ponto.posy,rc0c1);
+    }
+    
+}
