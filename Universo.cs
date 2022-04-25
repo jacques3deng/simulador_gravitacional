@@ -4,6 +4,7 @@ public class Universo{
     public int numero_corpos;
     public void ler_Dados_setar_Variaveis(){
         //TODO: ler dados no arquivo e setar valores para cada corpo
+        
     }
     public float calcularForçaGtotal(){
         //TODO: somar todas forças gravitacionais dos corpos

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/jacques/simulador_gravitacional/simulador_gravitacional.csproj": {}
+    "/home/reis/Desktop/UCL/simulador_gravitacional/simulador_gravitacional.csproj": {}
   },
   "projects": {
-    "/home/jacques/simulador_gravitacional/simulador_gravitacional.csproj": {
+    "/home/reis/Desktop/UCL/simulador_gravitacional/simulador_gravitacional.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/jacques/simulador_gravitacional/simulador_gravitacional.csproj",
+        "projectUniqueName": "/home/reis/Desktop/UCL/simulador_gravitacional/simulador_gravitacional.csproj",
         "projectName": "simulador_gravitacional",
-        "projectPath": "/home/jacques/simulador_gravitacional/simulador_gravitacional.csproj",
-        "packagesPath": "/home/jacques/.nuget/packages/",
-        "outputPath": "/home/jacques/simulador_gravitacional/obj/",
+        "projectPath": "/home/reis/Desktop/UCL/simulador_gravitacional/simulador_gravitacional.csproj",
+        "packagesPath": "/home/reis/.nuget/packages/",
+        "outputPath": "/home/reis/Desktop/UCL/simulador_gravitacional/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/jacques/.nuget/NuGet/NuGet.Config"
+          "/home/reis/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
