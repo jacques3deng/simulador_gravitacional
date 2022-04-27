@@ -1,10 +1,31 @@
+using System.IO;
 public class Universo{
     List<Corpo> corpos;
     public float ForçaGtotal{get;set;}
     public int numero_corpos;
     public void ler_Dados_setar_Variaveis(){
         //TODO: ler dados no arquivo e setar valores para cada corpo
-        Console.WriteLine("Teste");
+        try {
+            StreamReader reader = new StreamReader("universo.txt");
+            string dados = reader.ReadToEnd();
+            string[] corpos = dados.Split("\n");
+            int numLine = corpos.Length;;
+            
+            for (int i = 0; i < numLine; i++){
+                if (i == 0){
+                    Console.WriteLine($"{corpos[i]}\t");
+                    
+                }
+                else {
+                    
+                }
+            }
+            Console.WriteLine("************");
+        }
+        catch {
+            Console.WriteLine("Erro inesperado");
+        }
+
     }
     public float calcularForçaGtotal(){
         //TODO: somar todas forças gravitacionais dos corpos
@@ -21,6 +42,7 @@ public class Universo{
     }
     public Universo(){
         instrucoes();
+        ler_Dados_setar_Variaveis();
         corpos = new List<Corpo>();
     }
 

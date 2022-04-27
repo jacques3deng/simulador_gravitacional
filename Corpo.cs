@@ -11,7 +11,7 @@ public class Corpo{
     public Deslocamento deslocamento;
     public Corpo(string nome,float massa,float posx, float posy,float vel){
         Nome = nome;
-        Massa = massa*1000;
+        Massa = massa;
         v0 = vel;
         ponto = new Ponto(posx, posy);
     }
