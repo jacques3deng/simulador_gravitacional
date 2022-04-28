@@ -9,18 +9,31 @@ public class Universo{
             StreamReader reader = new StreamReader("universo.txt");
             string dados = reader.ReadToEnd();
             string[] corpos = dados.Split("\n");
-            int numLine = corpos.Length;;
-            
+            int numLine = corpos.Length;
+            int qtdCorpos, qtdIteracoes, timeUtil;
+
             for (int i = 0; i < numLine; i++){
                 if (i == 0){
-                    Console.WriteLine($"{corpos[i]}\t");
-                    
+                    var value = corpos[i].Split(";");
+                    qtdCorpos = Int32.Parse(value[0]);
+                    qtdIteracoes = Int32.Parse(value[1]);
+                    timeUtil = Int32.Parse(value[2]);
+                    Console.WriteLine($"{qtdCorpos}");
+                    Console.WriteLine($"{qtdIteracoes}");
+                    Console.WriteLine($"{timeUtil}");
                 }
                 else {
-                    
+                    var value = corpos[i].Split(";");
+                    Corpo corpo = new Corpo();
+                    corpo.Nome = value[0];
+                    corpo.Massa = Int32.Parse(value[1]);
+                    corpo.Raio = float.Parse(value[2]);
+                    corpo.PosX = Int32.Parse(value[3]);
+                    corpo.PosY = Int32.Parse(value[4]);
+                    corpo.VelX = Int32.Parse(value[5]);
+                    corpo.VelY = Int32.Parse(value[6]);
                 }
             }
-            Console.WriteLine("************");
         }
         catch {
             Console.WriteLine("Erro inesperado");

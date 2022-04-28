@@ -3,18 +3,24 @@ public class Corpo{
         get{ return (float)System.Math.Pow(10,-11)*6.6743f; }
     }
     public string Nome{get;set;}
-    public float Massa{get;set;}
+    public int Massa{get;set;}
+    public float Raio{get;set;}
+    public int PosX{get;set;}
+    public int PosY{get;set;}
+    public int VelX{get;set;}
+    public int VelY{get;set;}
     public float v0{get;set;}
     public Ponto ponto;
     public Aceleracao aceleracao;
     public Velocidade velocidade;
     public Deslocamento deslocamento;
-    public Corpo(string nome,float massa,float posx, float posy,float vel){
-        Nome = nome;
-        Massa = massa;
-        v0 = vel;
-        ponto = new Ponto(posx, posy);
-    }
+    
+    // public Corpo(string nome,float massa,float posx, float posy,float vel){
+    //     Nome = nome;
+    //     Massa = massa;
+    //     v0 = vel;
+    //     ponto = new Ponto(posx, posy);
+    // }
     
     public float r(Ponto p1, Ponto p2) {
         return (float)System.Math.Sqrt(System.Math.Pow(p2.posx - p1.posy, 2) + System.Math.Pow(p2.posy - p1.posy, 2));
