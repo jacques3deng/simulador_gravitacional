@@ -15,12 +15,12 @@ public class Corpo{
     public Velocidade velocidade;
     public Deslocamento deslocamento;
     
-    // public Corpo(string nome,float massa,float posx, float posy,float vel){
-    //     Nome = nome;
-    //     Massa = massa;
-    //     v0 = vel;
-    //     ponto = new Ponto(posx, posy);
-    // }
+    public Corpo(string nome, int massa, float posx, float posy,float vel){
+        Nome = nome;
+        Massa = massa;
+        v0 = vel;
+        ponto = new Ponto(posx, posy);
+    }
     
     public float r(Ponto p1, Ponto p2) {
         return (float)System.Math.Sqrt(System.Math.Pow(p2.posx - p1.posy, 2) + System.Math.Pow(p2.posy - p1.posy, 2));
