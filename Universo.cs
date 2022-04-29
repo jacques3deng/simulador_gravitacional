@@ -41,7 +41,7 @@ public class Universo{
     }
     public void gravarDados(){
         //TODO: gravar saidas no arquivo
-        
+        Console.WriteLine("teste");
     }
     public void atualizarValores(){
         //TODO: atualizar valores de cada corpo após as transformações
