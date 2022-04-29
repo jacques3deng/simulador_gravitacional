@@ -1,39 +1,29 @@
 using System.IO;
 public class Universo{
     // List<Corpo> corpos;
-    Corpo[] corpo;
+    List<Corpo> corpo;
     public float ForçaGtotal{get;set;}
-    public int numero_corpos;
+    public int numero_corpos,qtdIteracoes,timeInterect;
     public void ler_Dados_setar_Variaveis(){
         //TODO: ler dados no arquivo e setar valores para cada corpo
         StreamReader reader = new StreamReader("universo.txt");
         string dados = reader.ReadToEnd();
         string[] corpos = dados.Split("\n");
-        int numLine = corpos.Length;
-        int qtdCorpos, qtdIteracoes, timeUtil;
+        int numLine = corpos.Length;      
         
-
+        
         for (int i = 0; i < numLine; i++){
             if (i == 0){
-                var value = corpos[i].Split(";");
-                qtdCorpos = Int32.Parse(value[0]);
-                qtdIteracoes = Int32.Parse(value[1]);
-                timeUtil = Int32.Parse(value[2]);
-            }
-            else if (i != 0) {
-                var value = corpos[i].Split(";");
-                Console.WriteLine(value[0]);
                 
-                corpo[i-1].Nome = value[0];
-                corpo[i-1].Massa = Int32.Parse(value[1]);
-                corpo[i-1].Raio = float.Parse(value[2]);
-                corpo[i-1].PosX = Int32.Parse(value[3]);
-                corpo[i-1].PosY = Int32.Parse(value[4]);
-                corpo[i-1].VelX = Int32.Parse(value[5]);
-                corpo[i-1].VelY = Int32.Parse(value[6]);
+                string[] value = corpos[i].Split(";");
+                numero_corpos = Int32.Parse(value[0]);
+                qtdIteracoes = Int32.Parse(value[1]);
+                timeInterect = Int32.Parse(value[2]);
             }
-
-            Console.WriteLine(corpo[1].Nome);
+            else {
+                string[] value = corpos[i].Split(";");
+                corpo.Add(new Corpo(value[0], Int32.Parse(value[1]),float.Parse(value[2]),float.Parse(value[3]),Int32.Parse(value[4]),float.Parse(value[5])));
+            }   
         }
     }
     public float calcularForçaGtotal(){
@@ -51,8 +41,8 @@ public class Universo{
     }
     public Universo(){
         instrucoes();
-
-        Corpo[] corpo = new Corpo[50];
+        //corpo = new Corpo[50];        
+        corpo = new List<Corpo>();
         ler_Dados_setar_Variaveis();
     }
 

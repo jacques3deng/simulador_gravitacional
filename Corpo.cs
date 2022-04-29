@@ -15,9 +15,10 @@ public class Corpo{
     public Velocidade velocidade;
     public Deslocamento deslocamento;
     
-    public Corpo(string nome, int massa, float posx, float posy,float vel){
+    public Corpo(string nome, int massa, float raio,float posx, float posy,float vel){
         Nome = nome;
         Massa = massa;
+        Raio = raio;
         v0 = vel;
         ponto = new Ponto(posx, posy);
     }
@@ -43,5 +44,5 @@ public class Corpo{
         deslocamento = new Deslocamento(s0,v,a,t);
         return deslocamento;
     }
-   
+
 }
