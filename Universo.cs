@@ -1,7 +1,7 @@
 using System.IO;
 public class Universo{
     // List<Corpo> corpos;
-    List<Corpo> corpo;
+    public List<Corpo> corpo;
     public float ForçaGtotal{get;set;}
     public int numero_corpos,qtdIteracoes,timeInterect;
     public void ler_Dados_setar_Variaveis(){
@@ -10,8 +10,7 @@ public class Universo{
         string dados = reader.ReadToEnd();
         string[] corpos = dados.Split("\n");
         int numLine = corpos.Length;      
-        
-        
+                
         for (int i = 0; i < numLine; i++){
             if (i == 0){
                 
@@ -32,12 +31,21 @@ public class Universo{
     }
     public void calculosNosCorpos(){
         //TODO: calcular e setar posição, aceleraçao, velocidade e deslocameto para cada corpo
+        /*
+        for(int i =0; i < numero_corpos; i++){
+            corpo[i].setAceleracao();
+            corpo[i].setVelocidade();
+            corpo[i].setDeslocamento();
+        }*/
+
     }
     public void gravarDados(){
         //TODO: gravar saidas no arquivo
+        
     }
     public void atualizarValores(){
         //TODO: atualizar valores de cada corpo após as transformações
+        corpo.Clear();
     }
     public Universo(){
         instrucoes();
