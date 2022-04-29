@@ -5,40 +5,35 @@ public class Universo{
     public int numero_corpos;
     public void ler_Dados_setar_Variaveis(){
         //TODO: ler dados no arquivo e setar valores para cada corpo
-        try {
-            StreamReader reader = new StreamReader("universo.txt");
-            string dados = reader.ReadToEnd();
-            string[] corpos = dados.Split("\n");
-            int numLine = corpos.Length;
-            int qtdCorpos, qtdIteracoes, timeUtil;
+        
+        StreamReader reader = new StreamReader("universo.txt");
+        string dados = reader.ReadToEnd();
+        string[] corpos = dados.Split("\n");
+        int numLine = corpos.Length;
+        int qtdCorpos, qtdIteracoes, timeUtil;
 
-            for (int i = 0; i < numLine; i++){
-                if (i == 0){
-                    var value = corpos[i].Split(";");
-                    qtdCorpos = Int32.Parse(value[0]);
-                    qtdIteracoes = Int32.Parse(value[1]);
-                    timeUtil = Int32.Parse(value[2]);
-                    Console.WriteLine($"{qtdCorpos}");
-                    Console.WriteLine($"{qtdIteracoes}");
-                    Console.WriteLine($"{timeUtil}");
-                }
-                else {
-                    var value = corpos[i].Split(";");
-                    Corpo corpo = new Corpo();
-                    corpo.Nome = value[0];
-                    corpo.Massa = Int32.Parse(value[1]);
-                    corpo.Raio = float.Parse(value[2]);
-                    corpo.PosX = Int32.Parse(value[3]);
-                    corpo.PosY = Int32.Parse(value[4]);
-                    corpo.VelX = Int32.Parse(value[5]);
-                    corpo.VelY = Int32.Parse(value[6]);
-                }
+        for (int i = 0; i < numLine; i++){
+            if (i == 0){
+                var value = corpos[i].Split(";");
+                qtdCorpos = Int32.Parse(value[0]);
+                qtdIteracoes = Int32.Parse(value[1]);
+                timeUtil = Int32.Parse(value[2]);
             }
-        }
-        catch {
-            Console.WriteLine("Erro inesperado");
-        }
+            else if (i != 0) {
+                var value = corpos[i].Split(";");
+                Console.WriteLine(value[0]);
+                Corpo[] corpo = new Corpo[numLine-1];
+                corpo[i-1].Nome = value[0];
+                corpo[i-1].Massa = Int32.Parse(value[1]);
+                corpo[i-1].Raio = float.Parse(value[2]);
+                corpo[i-1].PosX = Int32.Parse(value[3]);
+                corpo[i-1].PosY = Int32.Parse(value[4]);
+                corpo[i-1].VelX = Int32.Parse(value[5]);
+                corpo[i-1].VelY = Int32.Parse(value[6]);
+            }
 
+            // Console.WriteLine(corpo[1].Massa);
+        }
     }
     public float calcularForçaGtotal(){
         //TODO: somar todas forças gravitacionais dos corpos
