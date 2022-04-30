@@ -2,7 +2,7 @@ using System.IO;
 public class Universo{
     // List<Corpo> corpos;
     public List<Corpo> corpo;
-    public float ForçaGtotal{get;set;}
+    public float ForcaGtotal{get;set;}
     public int numero_corpos,qtdIteracoes,timeInterect;
     public void ler_Dados_setar_Variaveis(){
         //TODO: ler dados no arquivo e setar valores para cada corpo
@@ -27,21 +27,53 @@ public class Universo{
     }
     public float calcularForçaGtotal(){
         //TODO: somar todas forças gravitacionais dos corpos
-        return ForçaGtotal;
+        int k = 0;
+        float raio;
+        float[] forca = new float[numero_corpos*100];
+        float constGravit = (float)System.Math.Pow(10,-11)*6.6743f;
+        ForcaGtotal = 0;
+
+        for(int i = 0; i < numero_corpos; i++){
+            for(int j = 0; j < numero_corpos; j++){
+                raio = (float)System.Math.Sqrt(System.Math.Pow(corpo[j].PosX - corpo[i].PosY, 2) + System.Math.Pow(corpo[j].PosY - corpo[i].PosY, 2));
+                forca[k] = constGravit*(corpo[i].Massa * corpo[j].Massa)/(raio * raio);
+                k++;
+                ForcaGtotal += forca[k];
+            }
+        }
+        return ForcaGtotal;
     }
+
     public void calculosNosCorpos(){
         //TODO: calcular e setar posição, aceleraçao, velocidade e deslocameto para cada corpo
-        /*
+        float raio;
         for(int i =0; i < numero_corpos; i++){
-            corpo[i].setAceleracao();
-            corpo[i].setVelocidade();
-            corpo[i].setDeslocamento();
-        }*/
-
+            for(int j = 0; j < numero_corpos; j++){
+                raio = (float)System.Math.Sqrt(System.Math.Pow(corpo[j].PosX - corpo[i].PosY, 2) + System.Math.Pow(corpo[j].PosY - corpo[i].PosY, 2));
+                
+                corpo[i].setAceleracao(ForcaGtotal, corpo[i].Massa, corpo[i].ponto, corpo[j].ponto, raio);
+                corpo[i].setVelocidade(ForcaGtotal, corpo[i].v0, corpo[i].aceleracao, timeInterect);
+                corpo[i].setDeslocamento(corpo[i].posicao, corpo[i].velocidade, corpo[i].aceleracao, timeInterect);
+            }
+        }        
     }
+
     public void gravarDados(){
         //TODO: gravar saidas no arquivo
-        Console.WriteLine("teste");
+        string result = "resultados.txt";
+        using (StreamWriter sw = new StreamWriter(result)){
+            sw.Write(string.Empty);
+            for(int i = 0; i < numero_corpos; i++){
+                sw.Write($"{corpo[i].Nome}; ");
+                sw.Write($"{corpo[i].Massa}; ");
+                sw.Write($"{corpo[i].Raio}; ");
+                sw.Write($"{corpo[i].PosX}; ");
+                sw.Write($"{corpo[i].PosY}; ");
+                sw.Write($"{corpo[i].aceleracao}; ");
+                sw.Write($"{corpo[i].velocidade}; ");
+                sw.WriteLine($"{corpo[i].deslocamento}");
+            }
+        }
     }
     public void atualizarValores(){
         //TODO: atualizar valores de cada corpo após as transformações

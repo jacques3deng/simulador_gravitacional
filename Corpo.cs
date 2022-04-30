@@ -11,6 +11,7 @@ public class Corpo{
     public int VelY{get;set;}
     public float v0{get;set;}
     public Ponto ponto;
+    public float posicao;
     public Aceleracao aceleracao;
     public Velocidade velocidade;
     public Deslocamento deslocamento;
@@ -21,6 +22,7 @@ public class Corpo{
         Raio = raio;
         v0 = vel;
         ponto = new Ponto(posx, posy);
+        posicao = (float)System.Math.Sqrt((posx*posx) + (posy*posy));
     }
     
     public float r(Ponto p1, Ponto p2) {

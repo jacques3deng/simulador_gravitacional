@@ -3,7 +3,6 @@ public struct Ponto{
     public float posy{get;set;}
 
     public Ponto(float x, float y){
-        
         posx = x;
         posy = y;
     }
